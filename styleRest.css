@@ -1,0 +1,807 @@
+body {
+    margin: 0; /* убираем все отступы */
+    font-family: 'Open Sans', sans-serif; /* ставим загруженный шрифт */
+}
+
+.container { /*  содержание основной части */
+    margin: 0px 165px; /*  делаем отступ справа и слева для всего содержания страницы */
+}
+
+.header { /*  головная часть сайта */
+    background-image: url(bg.jpg); /* используем jpeg как фон для сайта */
+    height: 100vh; /* растягиваем блок на всю высоту экрана (на максимальную высоту монитора) */
+    background-repeat: no-repeat; /* убираем повторение картинки */
+    background-size: cover; /* фон будет растянут на весь экран */
+}
+
+.header-line { /*  верхнее меню сайта */
+    padding-top: 50px; /*  делаем отступ от верхней границы окна */
+    display: flex; /* все элементы становятся в друг за другом слева направо */
+    align-items: center; /*  выравнивание элементов в ряд по линии главного элемента */
+    justify-content: space-around; /*  распологает элементы на расстоянии друг от друга */
+} 
+
+.header-head {
+    display: flex;
+}
+
+.burger-menu  {
+    display: none;
+}
+
+.burger-slide {
+    position: absolute;
+}
+
+.block {
+    display: block;
+}
+
+button {
+    border: none; 
+    outline: none; /*  убираем внешнюю границу */
+    background-color: transparent; /*  прозрачный фоновый цвет */
+}
+
+.disp {
+    display: none;
+}
+
+
+.nav-item { /*  делаем отступ от верхней границы окна */
+    color:antiquewhite; 
+    text-decoration: none; /*  убираем подчеркивание текста */
+    font-weight: 700; /*  задаем жирность текста */
+    font-size: 14px; /*  задаем размер текста */
+
+    margin-right: 25px; /* расстояние между элементами класса */
+
+    transition: color 0.3s linear; /* создает планое изменение цвета при наступлении события из hover */
+}
+
+.nav-item:hover { /* используем псевдокласс hover для обработки события наводки курсора на элемент */
+    color: red; /* изменение цвета элемента при наступлении события */
+}
+
+.cart-phone {
+    position:relative;
+    right: -20px;
+    top: -11px;
+
+}
+
+.cart {
+    position: absolute; /* сдвигаем элемент относительно его обычного расположения. Так же становится родителем для cart-img */
+
+    border-right: 1px solid antiquewhite; /* создаем только правую стенку рамки */
+    padding-right: 10px; /* отодвигаем стенку от элемента на 10рх */
+    height: 50px; /* отодвигаем стенку от элемента на 10рх */
+    margin-left: 20px;
+
+    
+}
+
+.cart-img {
+    position: absolute; /* теперь расположение картинки зависит от родителя со св-м position: relative*/
+    top: 18px; /* делаем отступы относительно  стенки (родителя)*/
+    right: 7px;
+    padding-right: 20px;
+}
+
+.num {
+    color: antiquewhite;
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: color 0.3s linear;
+}
+
+.num:hover { 
+    color: red;
+}
+
+.phone {
+    margin-left: 50px;
+}
+
+.phone-text {
+    font-weight: 400;
+    font-size: 14px;
+    color: antiquewhite;
+}
+
+.phone-holder {
+    display: flex;
+    align-items: center
+}
+
+.phone-img {
+    margin-right: 10px;
+}
+
+.button {
+    background-color: #FF7400;
+    color: antiquewhite;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 14px 19px; /* создаем отступы от внутренних границ слов, чтобы увеличить background*/
+
+    transition: background-color 0.2s linear;
+}
+
+.button:hover {
+    background-color: #c55900; /* изменение цвета background'а при наступлении события*/ 
+}
+
+.header-down {
+    position: relative;
+}
+
+.header-tittle {
+    color: #D67E35;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+
+    text-align: center; /* выравнивает содержимое блока по центру*/
+    position: absolute;
+    left: 0; /* сдвигаем содержимое блока по левой стороне*/
+
+    margin-top: 222px;
+    margin-bottom: 12px;
+}
+
+.header-subtittle {
+    font-size: 80px;
+}
+
+.header-suptittle {
+    font-family:'Open Sans', sans-serif;
+    font-size: 18px;
+    color: antiquewhite;
+}
+
+.header-suptittle::after { /* создает псевдоэлемент, который является последним потомком выбранного элемента */
+    position: absolute;
+    content: '';
+    width: 61px;
+    height: 2px;
+    background-color: antiquewhite; /* красим созданный элемент */
+    top:189px; /* задаем его координаты */
+    left: 126px;
+}
+
+.header-suptittle::before { /* создает псевдоэлемент, который является первым потомком выбранного элемента */
+    position: absolute;
+    content: '';
+    width: 61px;
+    height: 2px;
+    background-color: antiquewhite; /* красим созданный элемент */
+    top:189px; background-color: #FF7400;
+    left: 370px;
+}
+
+.header-button {
+    padding: 14px 28px; /* задаем форму кнопки */
+    background-color: #FF7400;
+    color:antiquewhite;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: background-color 0.2s linear;
+}
+
+.header-button:hover {
+    background-color: #c55900 ;
+}
+
+.cards-holder {
+    display: flex; /* расставляем все поля в ряд */
+    justify-content: center;
+}
+
+.card {
+    box-shadow: 10px 10px 40px 20px #0000001A;
+    width: 400px; 
+    margin-right: 110px;
+    background-color: #fff; 
+    margin-top: -80px; /* карты распологаются поверх фонового изображения*/
+    font-size: 26px;
+    font-weight: 400;
+    font-family: 'Tinos',serif;
+    padding: 10px 20px;
+}
+
+.card-image {
+    display:flex;
+    justify-content: center;
+    padding-top: 35px;   
+}
+
+.card-tittle {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.card-tittle span {
+    color: #BC9060;
+}
+
+.card-desc {
+    text-align: center;
+    justify-content: center; /* распологает элементы на расстоянии друг от друга */
+    padding: 20px 0px 20px;
+    color: #656363;
+    padding: 10px 20px;
+}
+
+
+
+
+.history {
+    margin-top: 166px;
+    padding-bottom: 350px;
+}
+
+/* .history-info {
+    padding-right: 200px;
+} */
+
+.history-tittle {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 54px;
+    line-height: 62.09px;
+    margin-bottom: 21px;
+    width: 444px;
+    text-align: center;
+}
+
+.history-tittle span {
+    color: #D67E34;
+}
+
+.history-desc {
+    font-weight: 400;
+    color:#656363;
+    font-size: 21px;
+    font-family: 'Open Sans', sans-serif;
+    width: 444px;
+    text-align: center;
+}
+
+.history-number {
+    display: flex; /* распологаем элементы друг за другом */
+    width: 444px;
+    margin-top: 90px; 
+    margin-left: 30px;
+    justify-content: center;
+}
+
+.number-item {
+    color:#BC9060;
+    font-size: 40px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-right: 60px;
+}
+
+.number-item span {
+    color: #000000;
+    font-size: 20px;
+    font-weight: 400;
+    display: block; /* распологаем текст из span под основным текстом item*/
+}
+
+.history-holder {
+    display: flex;
+    justify-content: space-between; /* Равномерно распределяет все элементы по ширине flex-блока.
+    Первый элемент вначале, последний в конце */
+}
+
+.history-images {
+    position: relative;
+}
+
+.img-table {
+    position: absolute;
+    z-index: 0; /* наивысший показатель будет перекрывать с показателем ниже */
+    top: 199px;
+    left: -366px;
+ }
+
+.img-window {
+    z-index: 999;
+    position: absolute;
+    top: -50px;
+    left: -676px;
+}
+
+.img-cake {
+    z-index: 500;
+    position: absolute;
+    top: 45px;
+    left: -550px; 
+}
+
+
+.black-block {
+    background-image: url(back-bg.jpg);
+    padding-top: 80px;
+    padding-bottom: 104px;
+}
+
+.block-holder {
+    display:flex;
+    /* margin-top: 50px; */
+    justify-content: space-between;
+    align-items: center;  /* выравнивает flex-элементы текущей flex-линии */
+}
+
+.left {
+    width: 601px;
+}
+
+.left-tittle {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 52px;
+    color: #D67E34;
+    padding-bottom: 20px;
+}
+
+.left-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: antiquewhite;
+}
+
+
+.right-btn {
+    background-color: #FF7400;
+    color: antiquewhite;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 14px 19px; /* создаем отступы от внутренних границ слов, чтобы увеличить background*/
+
+    transition: background-color 0.2s linear;
+}
+
+.right-btn:hover {
+    background-color: #c55900; /* изменение цвета background'а при наступлении события*/ 
+}
+
+.dishes {
+    margin-top: 134px;
+}
+
+.dishes-tittle {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 54px;
+    align-items: center;
+    text-align: center; /* выравнивает теск по центру*/
+}
+
+.dishes-tittle span {
+    color: #D67E34;
+}
+
+.burgers {
+    padding-top: 139px;
+    display: flex;
+    justify-content: center; /* распологаем контент блока по центру */
+}
+
+.burger-item {
+    display: flex;
+    align-items: center; /* выравнивает текст по центру */
+}
+
+.burger {
+    padding: 0px 30px 27px 30px;
+}
+
+.burger-text {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 26px;
+}
+
+
+.menu {
+    background-image: url(menu.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 152px;
+    padding-bottom: 226px;
+}
+
+.menu-main-tittle {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 54px;
+    color:#fff;
+    text-align: center;
+    padding: 100px 0px 138px 0px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: center; /* распределение блоков по центру */
+}
+
+.menu-image {
+    position: relative;
+
+}
+
+/* .ellipse-img {
+    position: absolute;
+    bottom: 5px; /* параметры задаются для позиционирования изображения 
+    right: 86px;
+    z-index: 500;
+} */
+
+/* .price-420 {
+    position: absolute;
+    bottom: 36px; /* параметры задаются для позиционирования изображения 
+    right: 113px;
+    z-index: 501;
+    font-family: 'Cookie', cursive;
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+} */
+
+.menu-item {
+    text-align: center;
+    background-color: #fff;
+    width: 27%;
+    padding-top: 80px;
+    margin-right: 30px; /* расстояние между блоками */
+}
+
+.menu-tittle {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 26px;
+    padding-top: 22px;
+}
+
+.menu-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 17px;
+}
+
+.menu-button {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.menu-btn {
+    background-color: #D67E34;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 14px 68px; /* создаем отступы от внутренних границ слов, чтобы увеличить background*/
+    box-shadow: 5px 5px 10px 0px #00000040;/* создание тени у кнопки*/
+
+    transition: background-color 0.2s linear;
+}
+
+.burger-img {
+    width: 70%; /* указываем картинке размер в процентах, для упрощеней адаптации разрещения сайта (чтобы картинка не привышала рамзеры блока)*/
+}
+
+.menu-btn:hover {
+    background-color: #b96d2e; /* изменение цвета background'а при наступлении события*/ 
+}
+
+
+.comments {
+    padding-top: 104px;
+    padding-bottom: 139px;
+    background-color: #E5E5E5;
+}
+
+.comment {
+    text-align: center;
+    /* width: 920px; */
+}
+
+
+.comment-text {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 20px;
+    padding-top: 17px;
+    padding-bottom: 30px;
+}
+
+.comment-img {
+    border-radius: 50%;
+}
+
+.comment-role {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    padding-top: 16px;
+    padding-bottom: 9px;
+}
+
+.comment-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding-bottom: 26px;
+}
+
+.galery {
+    margin-top: 101px;
+}
+
+.galery-tittle {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 54px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.galery-tittle span {
+    color: #D67E34;
+}
+
+.galery-food {
+    display: flex;
+    justify-content:center;
+}
+
+.galery-left {
+    margin-right: 30px;
+}
+
+.galery-up,
+.galery-down {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+
+.cooks {
+    margin-top: 100px;
+    padding-bottom: 100px;
+}
+
+.cooks-tittle {
+    font-family: 'Tinos',serif;
+    font-weight: 400;
+    font-size: 54px;
+    padding-bottom: 107px;
+    text-align: center;
+}
+
+.cooks-tittle span {
+    color:#D67E34;
+}
+
+.cooks-image {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10%;
+}
+
+
+.footer {
+    background-color: #000000;
+    padding: 50px 0px;
+    color: #fff;
+    text-align: center;
+}
+
+
+
+
+@media (max-width: 1500px) {
+
+    .galery-food {
+        display: block;
+    }
+
+    .img-gal,
+    .galery-up,
+    .galery-down {
+        display: block;
+        margin-right: auto; /* автоматическое выравнивание по центру */ 
+        margin-left: auto;
+    }
+
+    .img-gal {
+        margin-bottom: 20px;
+    }
+
+    .galery-left {
+        margin-right: 0;
+    }
+
+    .card-tittle-midle {
+        padding: 0px 30px;
+    }
+
+    .history-holder {
+        display: block;
+    }
+
+    .img-cake,
+    .img-table,
+    .img-window {
+        display: block;
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .history-tittle,
+    .history-desc {
+        width: auto;
+    }
+
+    .history-number {
+        display: block;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .number-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1300px) {
+
+    .menu-items {
+        display: block;
+    }
+
+    .menu-item {
+        margin: 20px auto;
+        width: 600px;
+    }
+
+    .header-tittle {
+        position: static;
+    }
+
+    .header-suptittle::before,
+    .header-suptittle::after {
+        content: none;
+    }
+    
+    .cooks-image {
+        display: block;
+        /* margin-left: auto;
+        margin-right: auto; */
+    }
+
+    .cooks-image img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    .block-holder {
+        display: block;
+    }
+
+    .left-tittle,
+    .left-text {
+        text-align: center;
+    }
+
+    .right-buttom {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    /* .history-holder {
+        display: block;
+    }
+
+    .history-images {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img-cake,
+    .img-table,
+    .img-window {
+        display: block;
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .history-tittle,
+    .history-desc {
+        width: auto;
+    }
+
+    .history-number {
+        display: block;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .number-item {
+        margin-bottom: 20px       ;
+    } */
+
+}
+
+@media (max-width: 1185px) {
+
+    .burger-menu {
+        display: block;
+
+    }
+
+    .nav,
+    .cart,
+    .phone,
+    .btn {
+        display: none;
+    }
+
+    .header-line {
+        justify-content: space-between;
+    }
+
+    .burgers-image {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .cards-holder {
+        display: block;
+    }
+    
+    .card {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .menu-item {
+        width: auto;
+    }
+
+    .container {
+        margin: auto 40px;
+    }
+}
+
+
